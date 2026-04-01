@@ -1,0 +1,23 @@
+class Solution {
+    public int moreFrequent(List<Integer> arr, int x, int y) {
+        // code here
+        int countx=0;
+        int county=0;
+        for(int i=0 ; i<arr.size() ; i++){
+            if(arr.get(i)==x){
+                countx++;
+            }
+            else if(arr.get(i)==y){
+                county++;
+            }
+        }
+        
+        if (countx > county) {
+            return x;
+        } else if (county > countx) {
+            return y;
+        } else {
+            return Math.min(x, y); // key fix
+        }
+    }
+}
