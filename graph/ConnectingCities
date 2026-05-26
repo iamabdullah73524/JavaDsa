@@ -1,0 +1,48 @@
+//find the minimum cost for connecting all cities on the map
+import java.util.*;
+public class ConnectingCities{
+    public static  class Edge implements Comparable<Edge>{
+        int v;
+        int cost;
+        public Edge(int v, int c){
+            this.v=v;
+            this.cost=c;
+        }
+        @Override
+        public int compareTo(Edge e2){
+            return this.cost-e2.cost;
+        }
+    }
+
+    public static int connectingcities(int[][] cities){
+        PriorityQueue<Edge> pq = new PriorityQueue<>();
+        pq.add(new Edge(0,0));
+        boolean[] vis = new boolean[cities.length];
+        int finalcost=0;
+
+        while(!pq.isEmpty()){
+        Edge curr = pq.remove();
+        if(!vis[curr.v]){
+            vis[curr.v]=true;
+            finalcost=finalcost+curr.cost;
+            for(int i=0 ; i<cities[curr.v].length ; i++){
+                if(cities[curr.v][i]!=0 && !vis[i]){
+                    pq.add(new Edge(i,cities[curr.v][i]));
+                }
+            }
+        }
+    }
+        return finalcost;
+
+    }
+    public static void main(String[] args){
+        int[][] cities= {{0,1,2,3,4},
+                        {1,0,5,0,7},
+                        {2,5,0,6,0},
+                        {3,0,6,0,0},
+                        {4,7,0,0,0}};
+        System.out.println(connectingcities(cities));                
+    }
+   
+
+}
