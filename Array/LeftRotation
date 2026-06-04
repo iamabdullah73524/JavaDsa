@@ -1,0 +1,22 @@
+class Solution {
+    public static void reverse(int[] arr ,int si, int ei){
+        int i=si;
+        int j=ei;
+        while(i<j){
+            int temp = arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+        
+    }
+    static void rotateArr(int arr[], int d) {
+        // code here
+        
+        d = d % arr.length;
+        reverse(arr,0,d-1);
+        reverse(arr,d,arr.length-1);
+        reverse(arr,0,arr.length-1);
+    }
+}
