@@ -1,0 +1,24 @@
+public class BinarySerach {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6};
+        int target=1;
+        int n=arr.length;
+        int si=0;
+        int ei=n-1;
+
+        while(si<=ei){
+            int mid = (si+ei)/2;
+            if(mid==target){
+                System.out.println("Ele "+target+ " is found at index "+mid);
+                return;
+            }
+            else if(mid>target){
+                ei=mid-1;
+            }
+            else if(mid<target){
+                si=mid+1;
+            }
+
+        }
+    }
+}
