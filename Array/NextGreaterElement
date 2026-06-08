@@ -1,0 +1,31 @@
+public class NextGreaterElement{
+    public static void main(String[] args){
+        char[] arr ={'a','b','c'};
+        char target = 'a';
+
+        //brute force
+        // for(int i=0 ; i<arr.length ; i++){
+        //     if(arr[i]>target){
+        //         System.out.println(i);
+        //         return;
+        //     }
+        // }
+
+        //optimesed using binary Search
+        int si=0;
+        int ei=arr.length-1;
+        int ans= arr[0];
+        while(si<=ei){
+            int mid = (si+ei)/2;
+            if(arr[mid]<=target){
+                 si  =mid+1;
+            }
+            else if(arr[mid]>target){
+                ans=arr[mid];
+                ei=mid-1;
+
+            }
+        }
+        System.out.println(ans);
+    }
+}
