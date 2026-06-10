@@ -1,3 +1,4 @@
+//leader mtlb uske right se usse bda na ho
 import java.util.*;
 class Solution {
     static ArrayList<Integer> leaders(int arr[]) {
