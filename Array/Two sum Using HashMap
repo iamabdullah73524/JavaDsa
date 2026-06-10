@@ -1,0 +1,31 @@
+import java.util.*;
+class Solution {
+    boolean twoSum(int arr[], int target) {
+        // code here
+        //brute force
+        // int n= arr.length;
+        // for(int i=0 ; i<n ; i++){
+        //     for(int j=i+1 ; j<n ; j++){
+        //         if(arr[i]+arr[j]==target){
+        //             return true;
+        //         }
+        //     }
+        // }
+        // return false;
+        
+        //optimezed
+        HashSet<Integer> set = new HashSet<>();
+        int n=arr.length;
+        
+        for(int i=0 ; i<n ; i++){
+            int need = target-arr[i];
+            if(set.contains(need)){
+                return true;
+            }else{
+                set.add(arr[i]);
+            }
+        }
+        return false;
+        
+    }
+}
