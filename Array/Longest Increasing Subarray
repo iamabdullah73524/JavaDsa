@@ -1,0 +1,38 @@
+import java.util.*;
+class Solution {
+    public ArrayList<Integer> longIncSubArr(int[] arr) {
+        // code here
+        int maxstart=0;
+        int maxlen=1;
+        
+        int start=0;
+        int currlen=1;
+        
+        int n= arr.length;
+        
+        for(int i=1 ; i<n ; i++){
+            if(arr[i]>arr[i-1]){
+                currlen++;
+            }
+            else{
+                if(currlen>maxlen){
+                    maxlen=currlen;
+                    maxstart=start;
+                }
+                currlen=1;
+                start=i;
+            }
+        }
+        
+        if(currlen>maxlen){
+            maxlen=currlen;
+            maxstart=start;
+        }
+        
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i=maxstart ; i < maxstart+maxlen ; i++){
+            ans.add(arr[i]);
+        }
+        return ans;
+    }
+}
