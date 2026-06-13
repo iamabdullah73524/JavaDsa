@@ -1,0 +1,17 @@
+import java.util.*;
+class Solution {
+    public int kthSmallest(int[] arr, int k) {
+        // Code here
+        int n=arr.length;
+        Arrays.sort(arr);
+        
+        if(k>n || k<0){
+            return -1;
+        }else{
+             return arr[k-1];
+        
+        }
+       
+        
+    }
+}
