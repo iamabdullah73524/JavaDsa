@@ -1,0 +1,26 @@
+import java.util.*;
+class Solution {
+    public void rearrange(int arr[]) {
+        // code here
+      int n=arr.length;
+      Arrays.sort(arr);
+      int i=0;
+      int j=n-1;
+      int k=0;
+      int[] ans= new int[n];
+      
+      while(i<=j){
+          if(i==j){
+              ans[k]=arr[i];
+              break;
+          }
+          ans[k++]=arr[j--];
+         ans[k++]=arr[i++];
+         
+      }
+      
+      for(int x=0 ; x<n ; x++){
+          arr[x]=ans[x];
+      }
+    }
+}
