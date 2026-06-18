@@ -1,0 +1,31 @@
+// User function Template for Java
+import java.util.*;
+class Solution {
+    public static ArrayList<Integer> commonElements(int nums1[], int nums2[]) {
+        // Your code here   int n=nums1.length;
+        int n=nums1.length;
+        int m=nums2.length;
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i=0 ; i<n ; i++){
+            int curr = nums1[i];
+            if(map.containsKey(curr)){
+                map.put(curr,map.get(curr)+1);
+            }else{
+                map.put(curr,1);
+            }
+        }
+        
+        for(int i=0 ; i<m ; i++){
+            if(map.containsKey(nums2[i]) && map.get(nums2[i])>0){
+                ans.add(nums2[i]);
+                map.put(nums2[i],map.get(nums2[i])-1);
+          
+        }
+        
+    }
+     Collections.sort(ans);
+     return ans;
+    }
+}
