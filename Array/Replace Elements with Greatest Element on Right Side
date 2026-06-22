@@ -1,3 +1,4 @@
+// it is also called Next Greater element
 class Solution {
     public int[] replaceElements(int[] arr) {
         int n=arr.length;
