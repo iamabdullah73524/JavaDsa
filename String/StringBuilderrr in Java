@@ -1,0 +1,8 @@
+public class StringBuilderrr {
+    public static void main(String[] args) {
+        StringBuilder str = new StringBuilder("Hw");
+        str.append('a');
+        System.out.println(str);
+
+    }
+}
