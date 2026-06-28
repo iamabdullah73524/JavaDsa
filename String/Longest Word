@@ -1,0 +1,16 @@
+class Solution {
+    public String longest(List<String> arr) {
+        // code here
+        StringBuilder sb = new StringBuilder(arr.get(0));
+        int n=arr.size();
+        
+        for(int i=1 ; i<n ; i++){
+            if(arr.get(i).length()>sb.length()){
+                sb.setLength(0);
+                sb.append(arr.get(i));
+            }
+        }
+        
+        return sb.toString();
+    }
+}
