@@ -1,0 +1,24 @@
+class Solution {
+	public int countWords(String s) {
+		// code here
+		int n = s.length();
+		if (n == 0) {
+			return 0;
+		}
+		int count = 1;
+		
+		if ((s.charAt(0) == ' ' || s.charAt(0) == '\n') || s.charAt(0) == '\t') {
+			count = 0;
+		}
+		
+		for (int i = 0 ; i<n-1 ; i++) {
+			if ((s.charAt(i) == ' ' || s.charAt(i) == '\n' || s.charAt(i) == '\t') &&
+			(s.charAt(i + 1) != ' ' &&
+			s.charAt(i + 1) != '\n' &&
+			s.charAt(i + 1) != '\t')) {
+				count++;
+			}
+		}
+		return count;
+	}
+}
