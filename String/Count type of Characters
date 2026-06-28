@@ -1,0 +1,33 @@
+class Sol {
+    int[] count(String s) {
+        // your code here
+        int n=s.length();
+        int Upper=0;
+        int Lower=0;
+        int num=0;
+        int spc=0;
+        
+        for(int i=0 ; i<n ; i++){
+            char ch = s.charAt(i);
+            if(ch>='A' && ch<='Z'){
+                Upper++;
+            }
+            else if(ch>='a' && ch<='z'){
+                Lower++;
+            }
+            else if(ch>='0' && ch<='9'){
+                num++;
+            }
+            else{
+                spc++;
+            }
+        }
+        int[] ans = new int[4];
+        ans[0]=Upper;
+        ans[1]=Lower;
+        ans[2]=num;
+        ans[3]=spc;
+        
+        return ans;
+    }
+}
