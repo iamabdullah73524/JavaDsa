@@ -1,0 +1,16 @@
+public class rivision{
+    public static void main(String[] args){
+        // print number from n to 1
+        int n=3;
+        p(n);
+
+    }
+    public static void p(int n){
+        if(n==1){
+            System.out.println(n);
+            return ;
+        }
+        System.out.println(n);
+        p(n-1);
+    }
+}
