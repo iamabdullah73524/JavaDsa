@@ -1,0 +1,12 @@
+public class sumofNnaturalNum {
+    public static void main(String[] args) {
+      int n=3;
+      System.out.println(sm(n));
+    }
+    public static int sm(int n){
+      if(n==1 ||n==0){
+        return n;
+      }
+      return n+sm(n-1);
+    }
+}
