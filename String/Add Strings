@@ -10,7 +10,7 @@ class Solution {
   
         if(i>=0){
             digit1=num1.charAt(i)-'0';
-            i--;
+            i--; 
         }
 
         if(j>=0){
