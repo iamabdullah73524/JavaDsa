@@ -12,7 +12,7 @@ class Solution {
             }
           sb.append(str.charAt(i));
           count++;
-
+ 
         }
         return sb.reverse().toString();
     }
