@@ -1,0 +1,45 @@
+class Solution {
+    public String reformat(String s) {
+        int n=s.length();
+        StringBuilder letter = new StringBuilder();
+        StringBuilder digit= new StringBuilder();
+
+        for(int i=0 ; i<n ; i++){
+            char ch = s.charAt(i);
+            if(Character.isLetter(ch)){
+                letter.append(ch);
+            }
+            else{
+                digit.append(ch);
+            }
+        }
+
+        if(Math.abs(letter.length()-digit.length())>1){
+            return "";
+        }
+
+        StringBuilder ans = new StringBuilder();
+
+        //swap 
+        if(digit.length()>letter.length()){
+            StringBuilder temp = letter;
+            letter = digit;
+            digit = temp;
+        }
+        
+        int i=0; int j=0;
+        while(i<letter.length() || j<digit.length()){
+            if(i<letter.length()){
+                ans.append(letter.charAt(i));
+                i++;
+            }
+
+            if(j<digit.length()){
+                ans.append(digit.charAt(j));
+                j++;
+            }
+        }
+        
+        return ans.toString();
+    }
+}
