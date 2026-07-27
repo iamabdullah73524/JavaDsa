@@ -1,0 +1,19 @@
+public class firstOccurence {
+    public static void main(String[] args) {
+        int arr[] = {2,5,6,7};
+        int i=0;
+        int key=6;
+        System.out.println(func(arr,i,key));
+    }
+    public static int func(int[] arr, int i,int key){
+        if(i==arr.length){
+            return -1;
+        }
+        if(arr[i]==key){
+            return i;
+        }
+        i++;
+       return func(arr,i,key);
+      
+    }
+}
