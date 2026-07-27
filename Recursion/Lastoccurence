@@ -1,0 +1,19 @@
+public class lastoccurence {
+    public static void main(String[] args) {
+        int arr[] ={2,3,6,4,7,3,8};
+        int i=0;
+        int idx=-1;
+        int key=3;
+        System.out.println(func(arr,i,idx,key));
+    }
+    public static int func(int[] arr, int i, int idx, int key){
+      if(i==arr.length){
+        return idx;
+      }
+      if(arr[i]==key){
+        idx=i;
+      }
+       return func(arr,i+1,idx,key);
+
+    }
+}
