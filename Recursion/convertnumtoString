@@ -1,0 +1,19 @@
+public class convertnum{
+    public  static void main(String[] args){
+        int n= 123;
+        StringBuilder sb = new StringBuilder();
+
+        conv(n);
+    }
+    public static String digit[]  ={"zero" ,"one","two","three","four","five","six","seven","Eight","Nine" };
+
+    public static void conv(int n){
+        if(n==0){
+            return ;
+        }
+        int ld = n%10;
+        conv(n/10);
+        System.out.print(digit[ld] + " ");
+    }
+    
+}
