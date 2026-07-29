@@ -1,0 +1,12 @@
+public class lengthofstring {
+    public static void main(String[] args) {
+        String str ="abcdef";
+        System.out.println(func(str));
+    }
+    public static int func(String str) {
+       if(str.length()==0){
+        return 0;
+       }
+       return 1+ func(str.substring(1));
+    }
+}
