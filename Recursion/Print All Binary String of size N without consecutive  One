@@ -1,0 +1,20 @@
+public class binarystring {
+    public static void main(String[] args) {
+        String str ="";
+        int n=2;
+        int lastnum=0;
+        pb(n, str, lastnum);  //pb mean (print Binary);
+    }
+    public static void pb(int n, String str, int lastnum){
+       if(n==0){
+        System.out.println(str);
+        return;
+       }
+
+       pb(n-1,str+'0',0);
+
+       if(lastnum==0){
+        pb(n-1,str+'1',1);
+       }
+    }
+}
