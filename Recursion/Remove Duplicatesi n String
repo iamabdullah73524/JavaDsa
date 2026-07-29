@@ -1,0 +1,25 @@
+public class removeString {
+    public static void main(String[] args) {
+        String str="banana";
+        int idx=0;
+        StringBuilder newStr = new StringBuilder("");
+        boolean map[] = new boolean[26];
+        removeDublicate(str,idx,newStr,map); 
+    }
+    public static void removeDublicate(String str, int idx, StringBuilder newStr, boolean[] map){
+        if(idx==str.length()){
+            System.out.println(newStr);
+            return;
+        }
+        char curr = str.charAt(idx);
+
+        if(( map[curr-'a'])==true){
+            removeDublicate(str, idx+1, newStr, map);
+        }
+        else{
+            newStr.append(curr);
+            map[curr-'a']=true;
+            removeDublicate(str,idx+1,newStr,map);
+        }
+    }
+}
