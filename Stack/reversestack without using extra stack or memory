@@ -1,39 +1,20 @@
-import java.util.*;
-//push at bottom in a stack
-public class StackE{
-    public static void main(String[] args) {
-        Stack<Integer> s = new Stack<>();
-        s.push(1);
-        s.push(2);
-        s.push(3);
-
-        
-      
-        reversestack(s);
-
-        while(!s.empty()){
-            System.out.println(s.peek());
-            s.pop();
-        }
-    }
-//reversestack without using extra stack or memory
-    public static void reversestack(Stack<Integer>s){
-        if(s.isEmpty()){
+class Solution {
+    public static void reverseStack(Stack<Integer> st) {
+        // code here
+        if(st.isEmpty()){
             return;
         }
-        int top = s.pop();
-        reversestack(s);
-        pushAtBottom(s, top);
+        int top  = st.pop();
+        reverseStack(st);
+        pushatbtm(st,top);
     }
-    
-   public static void pushAtBottom(Stack<Integer>s , int data){
-    if(s.isEmpty()){
-        s.push(data);
-        return;
+    public static void pushatbtm(Stack<Integer> st , int data){
+        if(st.isEmpty()){
+            st.push(data);
+            return;
+        }
+        int top = st.pop();
+        pushatbtm(st,data);
+        st.push(top);
     }
-    int top= s.pop();
-    pushAtBottom(s, data);
-    s.push(top);
-   }
-
 }
