@@ -1,6 +1,6 @@
 import java.util.*;
 public class C {
-    //implementation of Queue using java Collevtions
+    //implementation of Queue using java Collections
    public static void main(String[] args){
     Queue<Integer> q = new LinkedList<>();
     q.add(1);
