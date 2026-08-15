@@ -1,0 +1,12 @@
+import java.util.TreeMap;
+
+public class C {
+    public static void main(String[] args) {
+        TreeMap<String, Integer> tm = new TreeMap<>();
+        tm.put("India",200);
+        tm.put("China",50);
+        tm.put("Pakistan",500);
+
+        System.out.println(tm);
+    }
+}
