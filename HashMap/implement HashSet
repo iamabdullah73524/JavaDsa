@@ -1,0 +1,19 @@
+import java.util.*;
+//implement HashSet
+public class D {
+    public static void main(String[] args){
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        set.add(4);
+
+        if(set.contains(1)){
+            System.out.println("yes set is contain 1");
+        }
+
+        for(Integer i : set){
+            System.out.println(i);
+        }
+    }
+}
