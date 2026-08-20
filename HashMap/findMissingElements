@@ -1,0 +1,23 @@
+import java.util.*;
+class Solution {
+    public List<Integer> findMissingElements(int[] arr) {
+      int n= arr.length;
+      Arrays.sort(arr);
+      int l=arr[0];
+      int h=arr[n-1];
+
+      HashSet<Integer> set = new HashSet<>();
+      for(int i=0 ; i<n ; i++){
+        set.add(arr[i]);
+      }
+    ArrayList<Integer> ans = new ArrayList<>();
+      //now 
+      for(int i=l ; i<=h ; i++){
+        if(!set.contains(i)){
+            ans.add(i);
+        }
+      }
+
+      return ans;
+    }
+}
