@@ -1,0 +1,12 @@
+public class CheckoddEven{
+    public static void main(String[] args){
+        int n=4;
+        int bitmask=1;
+        if((n&bitmask)==0){
+            System.out.println("No is Even");
+        }
+        else{
+            System.out.println("No is Odd");
+        }
+    }
+}
