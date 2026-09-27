@@ -1,0 +1,16 @@
+public class ClearRangeOFBit {
+    public static void main(String[] args) {
+        int j = 7;
+        int i = 2;
+
+        long n = 0b100111010011L;
+
+        long a = (~0L) << (j + 1);
+        long b = (1L << i) - 1;
+
+        long bitmask = a | b;
+        long result = n & bitmask;
+
+        System.out.println(result);
+    }
+}
