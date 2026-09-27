@@ -1,0 +1,14 @@
+public class GetithBit {
+    public static void main(String[] args) {
+        int n=10;
+        int i=2;
+        int bitmask = i<<2;
+
+        if((n&bitmask)==0){
+            System.out.println("ith bit is Zero");
+        }
+        else{
+            System.out.println("ith bit is One");
+        }
+    }
+}
