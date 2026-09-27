@@ -1,0 +1,14 @@
+public class isPowerOfTwo {
+    public static void main(String[] args) {
+        int n = 4;
+        if (n <= 0) {
+            System.out.println(false);
+            return;
+        }
+        if ((n & (n - 1)) == 0) {
+            System.out.println(true);
+            return;
+        }
+        System.out.println(false);
+    }
+}
