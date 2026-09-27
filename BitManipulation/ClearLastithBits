@@ -1,0 +1,11 @@
+public class ClearLastBit{
+    //clear last ith Bits
+    public static void main(String[] args){
+        int n=15;
+        int i=2;
+        int bitmask=(~0<<i);
+
+        int ans = (n & bitmask);
+        System.out.println(ans);
+    }
+}
