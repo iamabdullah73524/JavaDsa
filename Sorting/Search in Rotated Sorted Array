@@ -1,0 +1,40 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int n= nums.length;
+        int si=0;
+        int ei=n-1;
+        int ans =search(nums,target,si,ei);
+        return ans;
+    
+
+    }
+    public static int search(int[] arr , int target , int si, int ei){
+            if(si>ei){
+                return -1;
+            }
+            
+            int mid = si+(ei-si)/2;
+            if(arr[mid]==target){
+                return mid;
+            }
+            //L1
+            if(arr[mid]>=arr[si]){
+                if(target>=arr[si] && target<arr[mid]){ //left side search
+                     return search(arr,target,si,mid-1);
+                }
+                else{
+                    return search(arr,target,mid+1,ei);
+                }
+            }
+            //L2
+            else{
+                if(target>arr[mid] && target<=arr[ei]){
+                    return search(arr,target,mid+1,ei);
+                }
+                else{
+                    return search(arr,target,si,mid-1);
+                }
+            }
+       }
+
+    }
