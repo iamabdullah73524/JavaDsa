@@ -1,0 +1,8 @@
+class Solution {
+    public static String countSort(String s) {
+        // code here
+        char[] arr = s.toCharArray();
+        Arrays.sort(arr);
+        return new String(arr);
+    }
+}
