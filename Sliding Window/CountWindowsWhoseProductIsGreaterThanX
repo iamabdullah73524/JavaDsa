@@ -1,0 +1,28 @@
+public class CountWindowsWhoseProductIsGreaterThanX {
+    public static void main(String[] args) {
+        int[] arr ={2,3,1,4,2};
+        int n=arr.length;
+        int k=2;
+        int x=5;
+        int prod=1;
+        int count=0;
+
+
+        for(int i=0 ; i<k ; i++){
+            prod=prod*arr[i];
+        }
+        if(prod>x){
+            count++;
+        }
+
+
+        for(int i=0 ; i<n-k ; i++){
+            prod = (prod/arr[i])*arr[i+k];
+            if(prod>x){
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+}
