@@ -1,0 +1,30 @@
+public class LongestStreakofWindowsWhoseSumisGreaterThanX {
+    public static void main(String[] args) {
+        int[] arr = { 1, 4, 2, 5, 3, 6, 2 };
+        int k = 2;
+        int x = 6;
+        int sum=0;
+        int count=0;
+        int n=arr.length;
+
+        for(int i=0 ; i<k ; i++){
+            sum=sum+arr[i];
+        }
+        if(sum>x){
+            count++;
+        }
+        int maxCount = count;
+
+        for(int i=0 ; i<n-k ; i++){
+            sum=sum-arr[i]+arr[i+k];
+            if(sum>x){
+                count++;
+                 maxCount = Math.max(maxCount, count);
+            }
+            else{
+                count=0;
+            }
+        }
+        System.out.println(maxCount);
+    }
+}
