@@ -1,0 +1,33 @@
+public class CountWindowswithExactlyKEvenElements {
+    public static void main(String[] args) {
+        int[] arr = {2,4,1,6,3,8,5};
+        int n=arr.length;
+        int k=3;
+        int target=2;
+        int ecount=0;
+        int ans=0;
+
+        for(int i=0 ; i<k ;i++){
+            if(arr[i]%2==0){
+                ecount++;
+            }
+        }
+        if(ecount==target){
+            ans++;
+        }
+
+        for(int i=0; i<n-k ; i++){
+            if(arr[i]%2==0){
+                ecount--;
+            }
+            if(arr[i+k]%2==0){
+                ecount++;
+            }
+
+            if(ecount==target){
+                ans++;
+            }
+        }
+        System.out.println(ans);
+    }
+}
