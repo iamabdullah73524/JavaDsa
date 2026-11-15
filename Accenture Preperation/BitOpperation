@@ -1,0 +1,33 @@
+import java.util.*;
+public class BitOpperation{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a binary string");
+        String str = sc.nextLine();
+        System.out.println(fn(str));
+    }
+
+    public static int fn(String str){
+        if(str==null || str.length()==0){
+            return -1;
+        }
+
+        int result = str.charAt(0)-'0';
+
+        for(int i=1 ; i<str.length() ; i=i+2){
+            char op = str.charAt(i);
+            int next = str.charAt(i+1)-'0';
+
+            if(op=='A'){
+                result = result & next;
+            }
+            else if (op=='B'){
+                result = result | next;
+            }
+            else if(op=='C'){
+                result = result ^ next;
+            }
+        }
+        return result;
+    }
+}
