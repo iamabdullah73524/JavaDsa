@@ -1,0 +1,23 @@
+import java.util.*;
+public class BinaryToDec {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a binary number");
+        int n= sc.nextInt();
+        System.out.println(fn(n));
+    }
+    public static int fn(int n){
+       if(n==0){
+        return 0;
+       }
+       int result = 0;
+       int base=0;
+       while(n>0){
+        int ld = n%10;
+        result=result+ ld*(int)Math.pow(2,base);
+        base++;
+        n=n/10;
+       }
+       return result;
+    }
+}
