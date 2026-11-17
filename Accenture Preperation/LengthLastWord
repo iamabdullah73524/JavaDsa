@@ -1,0 +1,12 @@
+public class LengthLastWord {
+    public static void main(String[] args){
+        String s = "  I am  a passionate   Developer  ";
+        String[] arr = s.split(" ");
+
+        int n=arr.length;
+
+        System.out.println(arr[n-1].length());
+
+
+    }
+}
