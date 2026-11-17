@@ -1,0 +1,17 @@
+public class MoveHyphen {
+    public static void main(String[] args){
+        String s = "I-am-a-Muslim";
+        StringBuilder hyphen = new StringBuilder();
+        StringBuilder nohyphen = new StringBuilder();
+
+        for(int i=0 ; i<s.length(); i++){
+            char curr =s.charAt(i);
+            if(curr=='-'){
+                hyphen.append(curr);
+            }else{
+                nohyphen.append(curr);
+            }
+        }
+        System.out.println(hyphen.toString() + nohyphen.toString());
+    }
+}
