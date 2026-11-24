@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class palindromecheck {
+   public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+
+        System.out.println ("Enter Upper and Lower Limit");
+        int ul = sc.nextInt ();
+        int ll = sc.nextInt ();
+        
+        for (int i = ul; i <= ll; i++){
+	        if (i == palindrome (i))
+                System.out.print(i+" ");
+        }
+    }
+
+    public static  int palindrome(int n){
+        int ans =0;
+
+        while(n>0){
+            int ld = n%10;
+            ans=ans*10+ld;
+            n=n/10;
+        }
+        return ans;
+    }
+}
